@@ -315,10 +315,11 @@ function getNextBeadRadius(r) {
   }
 }
 const playButton = document.getElementById("animate");
-playButton.addEventListener("click", (e) => {
+playButton.addEventListener("click", toggleAnimation);
+
+function toggleAnimation() {
   animating = animating ? false : true;
   if (animating) {
-    offsetDelta = 1;
     requestAnimationFrame(RenderFunction);
     showById("pause-button");
     hideById("play-button");
@@ -329,23 +330,60 @@ playButton.addEventListener("click", (e) => {
     hideById("pause-button");
     playButton.setAttribute("title", "Play");
   }
-});
+}
 
-document.getElementById("left").addEventListener("click", () => {
+const leftButton = document.getElementById("left");
+leftButton.addEventListener("click", handleLeft);
+leftButton.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.code === "space") {
+    playButton.focus();
+    playButton.click();
+    e.preventDefault();
+    e.stopPropagation();
+  }
+});
+function handleLeft() {
   offsetMovingRight = false;
   if (!animating) {
-    offsetDelta = 1;
     RenderFunction();
+  }
+}
+const rightButton = document.getElementById("right");
+rightButton.addEventListener("click", handleRight);
+rightButton.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.code === "space") {
+    playButton.focus();
+    playButton.click();
+    e.stopPropagation();
+    e.preventDefault();
+  }
+});
+function handleRight() {
+  offsetMovingRight = true;
+  if (!animating) {
+    RenderFunction();
+  }
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.code === "space") {
+    if (
+      e.target === playButton ||
+      e.target === leftButton ||
+      e.target === rightButton
+    )
+      return;
+    playButton.focus();
+    playButton.click();
+  } else if (e.key === "ArrowRight") {
+    rightButton.focus();
+    rightButton.click();
+  } else if (e.key === "ArrowLeft") {
+    leftButton.focus();
+    leftButton.click();
   }
 });
 
-document.getElementById("right").addEventListener("click", () => {
-  offsetMovingRight = true;
-  if (!animating) {
-    offsetDelta = 1;
-    RenderFunction();
-  }
-});
 function drawHorLine(x, y) {
   Ctx.beginPath();
   Ctx.moveTo(XC(x), YC(y));
