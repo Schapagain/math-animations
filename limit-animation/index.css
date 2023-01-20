@@ -1,68 +1,68 @@
-*{
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .plot-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 canvas {
-    background-color: rgb(247, 242, 235);
+  background-color: rgb(247, 242, 235);
+  border-radius: 5px;
 }
 
 .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    background-color:rgb(219, 216, 216); 
-    border-radius: 7px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  background-color: rgb(219, 216, 216);
+  border-radius: 5px;
 }
 
 button {
-    outline: none;
-    border: none;
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-    background-color: inherit;
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: inherit;
 }
 
 #overlay-display {
-    width: 100px;
-    height: 40px;
-    background-color: rgb(219, 216, 216);
-    position: absolute;
-    top:-50px;
-    left: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(219, 216, 216);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  align-self: flex-start;
+  border-radius: 5px;
 }
 
 #right {
-    transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 
-
 .hidden {
-    display: none;
-    width: 0;
-    height: 0;
+  display: none;
+  width: 0;
+  height: 0;
 }
