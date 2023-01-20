@@ -314,19 +314,20 @@ function getNextBeadRadius(r) {
     return r - 1;
   }
 }
-
-document.getElementById("animate").addEventListener("click", (e) => {
+const playButton = document.getElementById("animate");
+playButton.addEventListener("click", (e) => {
   animating = animating ? false : true;
-
   if (animating) {
     offsetDelta = 1;
     requestAnimationFrame(RenderFunction);
     showById("pause-button");
     hideById("play-button");
+    playButton.setAttribute("title", "Pause");
   } else {
     drawHorLine(F(MinX() + currentBeadOffset));
     showById("play-button");
     hideById("pause-button");
+    playButton.setAttribute("title", "Play");
   }
 });
 
