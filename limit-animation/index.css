@@ -27,7 +27,7 @@ canvas {
 .button-group {
   width: 150px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 10px 0;
   background-color: rgb(219, 216, 216);
@@ -37,11 +37,21 @@ canvas {
 button {
   outline: none;
   border: none;
-  padding: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  padding: 5px 10px;
   cursor: pointer;
   background-color: inherit;
+}
+
+#animate > svg {
+  transform: scale(1.2);
+}
+
+button:active {
+  filter: brightness(85%);
+}
+
+button:focus {
+  outline: 1px solid black;
 }
 
 #overlay-display {
