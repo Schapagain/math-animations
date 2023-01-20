@@ -1,37 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Lets learn limits!</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div class="plot-wrapper"><canvas id="plot" width="500" height="500"></canvas>
-            <div class="button-group">
-                <button id="left" title="Left">
-                    <title>Left</title>
-                    <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.945,12.832l12,8A1,1,0,0,0,20.5,20V4a1,1,0,0,0-1.555-.832l-12,8a1,1,0,0,0,0,1.664ZM18.5,5.869V18.131L9.3,12ZM3.5,18V6a1,1,0,0,1,2,0V18a1,1,0,0,1-2,0Z"/></svg>
-                </button>
-                <button id="animate" class="paused" title="Play">
-                    <svg id="play-button" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 18V6L17 12L6 18Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                    <svg id="pause-button" class="hidden" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 9V15M14 9V15M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                </button>
-                <button id="right" title="Right">
-                    <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.945,12.832l12,8A1,1,0,0,0,20.5,20V4a1,1,0,0,0-1.555-.832l-12,8a1,1,0,0,0,0,1.664ZM18.5,5.869V18.131L9.3,12ZM3.5,18V6a1,1,0,0,1,2,0V18a1,1,0,0,1-2,0Z"/></svg>
-                </button>
-            </div>
-            <div id="overlay-display">
-                <p id="coords"></p>
-            </div>
-       </div>
+      <div class="plot-wrapper">
+        <div id="overlay-display">
+          <p id="coords"></p>
+        </div>
+        <canvas id="plot" width="500" height="500"></canvas>
+        <div class="button-group">
+          <button id="left" title="Left">
+            <title>Left</title>
+            <svg
+              fill="#000000"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.945,12.832l12,8A1,1,0,0,0,20.5,20V4a1,1,0,0,0-1.555-.832l-12,8a1,1,0,0,0,0,1.664ZM18.5,5.869V18.131L9.3,12ZM3.5,18V6a1,1,0,0,1,2,0V18a1,1,0,0,1-2,0Z"
+              />
+            </svg>
+          </button>
+          <button id="animate" class="paused" title="Play">
+            <svg
+              id="play-button"
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 18V6L17 12L6 18Z"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              id="pause-button"
+              class="hidden"
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 9V15M14 9V15M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button id="right" title="Right">
+            <svg
+              fill="#000000"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.945,12.832l12,8A1,1,0,0,0,20.5,20V4a1,1,0,0,0-1.555-.832l-12,8a1,1,0,0,0,0,1.664ZM18.5,5.869V18.131L9.3,12ZM3.5,18V6a1,1,0,0,1,2,0V18a1,1,0,0,1-2,0Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
-<script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
